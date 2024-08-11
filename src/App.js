@@ -4,18 +4,43 @@ import { highlight, languages } from "prismjs/components/prism-core";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism.css";
+import Directory from "./components/Category-Items/directory/Directory";
+const App = () => {
+  const categories = [
+    {
+      "id": 1,
+      "title": "hats",
+      "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
+    },
+    {
+      "id": 2,
+      "title": "jackets",
+      "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png"
+    },
+    {
+      "id": 3,
+      "title": "sneakers",
+      "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png"
+    },
+    {
+      "id": 4,
+      "title": "womens",
+      "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
+    },
+    {
+      "id": 5,
+      "title": "mens",
+      "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
+    },
+  ]
+  
+  
 
-export default function App() {
-  const [code, setCode] = useState(`function Test () { return "hello"}`);
   return (
-    <div>
-      <Editor
-        value={code}
-        onValueChange={value => setCode(value)}
-        highlight={code => highlight(code, languages.js)}
-        padding={20}
-        placeholder={"WRITE YOUR CSS HERE"}
-      />
-    </div>
+    <Directory categories={categories}/>
   );
-}
+};
+
+export default App;
+
+
